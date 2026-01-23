@@ -14,13 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <p>Presented to you by</p>
-    <h2><a href="https://idm216-s001-hwk01-cct52.netlify.app/" target="_blank">Team Null</a></h2>
+    <section>
+        <p>Presented to you by</p>
+        <h2><a href="https://idm216-s001-hwk01-cct52.netlify.app/" target="_blank">Team Null</a></h2>
+    </section>
 
     <h1>Coming Soon</h1>
 
-    <p>2601-IDM 216</p>
-    <h2>KC's Fresh Fruit & Smoothies Web App</h2>
+    <section>
+        <p><a href="https://github.com/ChristopherStraface/2601-idm216-KCsFreshFruitAndSmoothies">2601&#45;IDM 216</a></p>
+        <h2>KC&#39;s Fresh Fruit &#38; Smoothies Web App</h2>
+    </section>
 
     <style>
         * {
@@ -78,37 +82,37 @@
             text-align: center;
         }
 
+        section {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: max(0.5rem, 0.8vw);
+            justify-content: center;
+        }
+
         h1, h2 {
             font-weight: 600;
         }
 
-        /* Hyperlink Color Scheme */
         a {
-            color: var(--link-normal);
+            cursor: pointer;
             transition: color 200ms ease-in-out;
         }
 
-        a:hover {
-            color: var(--link-hover);
-        }
+        /* Link Color Scheme */
+        a:link {color: var(--link-normal);}
+        a:visited {color: var(--link-visited);}
+        a:hover {color: var(--link-hover);}
+        a:active {color: var(--link-visited);}
 
-        a:active {
-            color: var(--link-active);
-        }
-
-        a:visited {
-            color: var(--link-visited);
-        }
-
-        /* Mobile */
-        @media (width < 744px) {
+        /* Mobile Small */
+        @media (width < 375px) {
             body {
+                gap: 1rem;
                 padding: 0 1rem;
             }
 
             h1 {
                 font-size: 2.5rem;
-                margin: 1rem 0;
             }
 
             h2 {
@@ -120,11 +124,34 @@
             }
         }
 
+        /* Mobile Large */
+        @media (375px <= width < 744px) {
+            body {
+                gap: 1.25rem;
+                padding: 0 1.5rem;
+            }
+
+            h1 {
+                font-size: 2.75rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+        }
+
         /* Tablet */
         @media (744px <= width < 1024px) {
+            body {
+                gap: 1.5rem;
+            }
+
             h1 {
                 font-size: 3rem;
-                margin: 1.5rem 0;
             }
 
             h2 {
@@ -138,9 +165,12 @@
 
         /* Desktop */
         @media (1024px <= width < 2560px) {
+            body {
+                gap: 2rem;
+            }
+
             h1 {
                 font-size: clamp(3rem, calc((1 / 24 * 100) * 1vw), 8rem);
-                margin: 2rem 0;
             }
 
             h2 {
@@ -154,9 +184,12 @@
 
         /* Television */
         @media (2560px <= width) {
+            body {
+                gap: 2vw;
+            }
+
             h1 {
                 font-size: calc((1 / 20 * 100) * 1vw);
-                margin: 2rem 0;
             }
 
             h2 {
